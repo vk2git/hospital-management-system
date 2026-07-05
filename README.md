@@ -1,4 +1,4 @@
-# 🏥 Multi-Tenant Hospital Management System (HMS) with Local AI Integration
+# Multi-Tenant Hospital Management System (HMS) with Local AI Integration
 
 ![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688.svg)
@@ -12,7 +12,7 @@ Ideal for demonstrating expertise in **Software Engineering (SDE)**, **Backend A
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 - [Why This Tech Stack?](#-why-this-tech-stack)
 - [System Architecture](#-system-architecture)
 - [Key Features & AI Integration](#-key-features--ai-integration)
@@ -23,7 +23,7 @@ Ideal for demonstrating expertise in **Software Engineering (SDE)**, **Backend A
 
 ---
 
-## 🛠️ Why This Tech Stack?
+## Why This Tech Stack?
 
 We specifically chose modern, asynchronous tools to handle the high concurrency requirements of a multi-tenant medical environment:
 
@@ -34,7 +34,7 @@ We specifically chose modern, asynchronous tools to handle the high concurrency 
 
 ---
 
-## 🏛️ System Architecture
+## System Architecture
 
 The application follows a decoupled, microservices-inspired architecture.
 
@@ -53,14 +53,14 @@ graph TD
     end
 ```
 
-### 🚀 Architectural Highlights
+### Architectural Highlights
 *   **Asynchronous Database Operations:** Bypasses traditional ORM overhead by executing raw SQL queries directly through `asyncpg` connection pools. Guarantees maximum throughput under high concurrent loads.
 *   **True Multi-Tenancy:** Supports isolated data partitions across multiple hospitals (`hospitals` and `user_hospitals` schemas) sharing the same infrastructure.
 *   **Granular Privacy Shielding:** Patients can toggle hospital-level blacklists, dynamically filtering their records out of search results and restricting access from specific facilities.
 
 ---
 
-## 🧠 Key Features & AI Integration (Generative AI)
+## Key Features & AI Integration (Generative AI)
 
 To ensure clinical safety and strict data sovereignty, all Natural Language Processing (NLP) and GenAI features communicate with a local **Ollama** instance hosting the **`qwen3:14b`** model.
 
@@ -84,7 +84,7 @@ sequenceDiagram
     UI-->>Doctor: Display Search Results
 ```
 
-### 🤖 AI Engineering Capabilities
+### AI Engineering Capabilities
 1.  **Smart NLP Patient Search (Text-to-SQL):** Doctors can query patient databases using natural language. The LLM acts as an NLP-to-SQL compiler while the backend strictly enforces RBAC and privacy filters before execution.
 2.  **Chronological Medical Summaries (Chain-of-Thought):** Summarizes long histories of medical records into concise clinical briefings for rapid onboarding.
 3.  **AI-Generated Prescription Drafts:** Translates diagnosis and symptom lists into structured JSON (`{"medications": [], "instructions": ""}`) to save doctors administrative time. It utilizes strict prompt schemas enforced by Pydantic validation.
@@ -93,7 +93,7 @@ sequenceDiagram
 
 ---
 
-## 🗄️ Database Schema (ERD)
+## Database Schema (ERD)
 
 The database schema is heavily optimized for multi-tenant relations and secure logging.
 
@@ -112,7 +112,7 @@ erDiagram
 
 ---
 
-## 🛡️ Security & RBAC
+## Security & RBAC
 
 Enforces **8 distinct user roles** with rigid access control boundaries. 
 *   `admin`, `hospital_admin`, `head_of_doctor`, `head_of_staff`, `doctor`, `staff`, `pharmacy`, `patient`.
@@ -124,7 +124,7 @@ Enforces **8 distinct user roles** with rigid access control boundaries.
 
 ---
 
-## 📚 Documentation & Deep Dives
+## Documentation & Deep Dives
 
 For an in-depth understanding of the system's core components, please explore the `docs/` folder:
 
@@ -135,7 +135,7 @@ For an in-depth understanding of the system's core components, please explore th
 
 ---
 
-## 🛠️ Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 *   Python 3.11+, Node.js 18+, PostgreSQL.
