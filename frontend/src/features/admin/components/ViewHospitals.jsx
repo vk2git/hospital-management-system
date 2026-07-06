@@ -139,7 +139,7 @@ export default function ViewHospitals() {
         <button 
           onClick={fetchData}
           disabled={loading}
-          className="p-3 rounded-full hover:bg-[var(--md-sys-color-surface-container-high)] text-[var(--md-sys-color-on-surface-variant)] transition-all duration-200 focus:outline-none flex items-center justify-center disabled:opacity-40"
+          className="p-3 rounded-full hover:bg-[var(--md-sys-color-surface-container-high)] text-[var(--md-sys-color-on-surface-variant)] transition-all duration-200 focus:outline-none flex items-center justify-center disabled:opacity-40 md:mr-32"
           title="Sync Directory"
         >
           <span className={`material-symbols-rounded text-2xl ${loading ? 'animate-spin' : ''}`}>
@@ -283,49 +283,47 @@ export default function ViewHospitals() {
                 </button>
               </div>
 
-              {/* Profile identity header on canvas */}
-              <div className="flex flex-col sm:flex-row items-center sm:items-end gap-6 pb-6 border-b border-[var(--md-sys-color-outline-variant)]/40 select-none">
-                {/* Logo emblem */}
-                <div 
-                  className={`w-20 h-20 rounded-[var(--md-sys-shape-corner-large)] flex items-center justify-center font-extrabold text-3xl border border-[var(--md-sys-color-outline-variant)] flex-shrink-0 ${emblemColors.bg} ${emblemColors.text}`}
-                >
-                  {getInitials(selectedHospital.name)}
-                </div>
+              {/* Profile identity header & Quick Operational KPI Row */}
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[var(--md-sys-color-outline-variant)]/40 select-none">
                 
-                {/* Title and details */}
-                <div className="min-w-0 text-center sm:text-left">
-                  <span className="md-label-large text-[var(--md-sys-color-primary)] font-bold tracking-wider uppercase block mb-1">
-                    Core Tenant Registry
-                  </span>
-                  <h2 className="md-headline-medium text-[var(--md-sys-color-on-background)] font-extrabold tracking-tight truncate leading-tight font-brand">
-                    {selectedHospital.name}
-                  </h2>
+                {/* Left: Brand/Name */}
+                <div className="flex items-center gap-5 min-w-0">
+                  {/* Logo emblem */}
+                  <div 
+                    className={`w-16 h-16 rounded-[var(--md-sys-shape-corner-large)] flex items-center justify-center font-extrabold text-2xl border border-[var(--md-sys-color-outline-variant)] flex-shrink-0 ${emblemColors.bg} ${emblemColors.text}`}
+                  >
+                    {getInitials(selectedHospital.name)}
+                  </div>
+                  
+                  {/* Title and details */}
+                  <div className="min-w-0">
+                    <span className="md-label-large text-[var(--md-sys-color-primary)] font-bold tracking-wider uppercase block mb-1">
+                      Core Tenant Registry
+                    </span>
+                    <h2 className="md-headline-medium text-[var(--md-sys-color-on-background)] font-extrabold tracking-tight truncate leading-tight font-brand">
+                      {selectedHospital.name}
+                    </h2>
+                  </div>
                 </div>
-              </div>
 
-              {/* Quick Operational KPI Row */}
-              <div className="grid grid-cols-3 gap-4 border-b border-[var(--md-sys-color-outline-variant)]/40 pb-6">
-                <div className="flex flex-col space-y-1">
-                  <span className="md-label-large text-[var(--md-sys-color-on-surface-variant)] uppercase tracking-wider font-semibold">Assigned Admins</span>
-                  <span className="md-title-large text-[var(--md-sys-color-primary)] font-extrabold flex items-center gap-1.5 mt-1 leading-none">
-                    <span className="material-symbols-rounded">group</span>
-                    {selectedHospitalAdmins.length}
-                  </span>
+                {/* Right: Operational KPIs */}
+                <div className="flex items-center gap-6 md:border-l md:border-[var(--md-sys-color-outline-variant)]/40 md:pl-6 flex-shrink-0">
+                  <div className="flex flex-col space-y-1">
+                    <span className="md-label-large text-[var(--md-sys-color-on-surface-variant)] uppercase tracking-wider font-semibold">Assigned Admins</span>
+                    <span className="md-title-large text-[var(--md-sys-color-primary)] font-extrabold flex items-center gap-1.5 mt-1 leading-none">
+                      <span className="material-symbols-rounded">group</span>
+                      {selectedHospitalAdmins.length}
+                    </span>
+                  </div>
+                  <div className="flex flex-col space-y-1 border-l border-[var(--md-sys-color-outline-variant)]/40 pl-6">
+                    <span className="md-label-large text-[var(--md-sys-color-on-surface-variant)] uppercase tracking-wider font-semibold">Tenant Status</span>
+                    <span className="md-title-large text-emerald-600 dark:text-emerald-400 font-extrabold flex items-center gap-1.5 mt-1 leading-none">
+                      <span className="material-symbols-rounded">check_circle</span>
+                      Active
+                    </span>
+                  </div>
                 </div>
-                <div className="flex flex-col space-y-1 border-l border-[var(--md-sys-color-outline-variant)]/40 pl-6">
-                  <span className="md-label-large text-[var(--md-sys-color-on-surface-variant)] uppercase tracking-wider font-semibold">Tenant Status</span>
-                  <span className="md-title-large text-emerald-600 dark:text-emerald-400 font-extrabold flex items-center gap-1.5 mt-1 leading-none">
-                    <span className="material-symbols-rounded">check_circle</span>
-                    Active
-                  </span>
-                </div>
-                <div className="flex flex-col space-y-1 border-l border-[var(--md-sys-color-outline-variant)]/40 pl-6">
-                  <span className="md-label-large text-[var(--md-sys-color-on-surface-variant)] uppercase tracking-wider font-semibold">Instance Index</span>
-                  <span className="md-title-large text-[var(--md-sys-color-tertiary)] font-extrabold flex items-center gap-1.5 mt-1 leading-none">
-                    <span className="material-symbols-rounded">database</span>
-                    HMS-0{selectedHospital.id}
-                  </span>
-                </div>
+
               </div>
 
               {/* Physical Location Details Section */}

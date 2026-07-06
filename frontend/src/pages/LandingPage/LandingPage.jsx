@@ -62,6 +62,19 @@ const AnimatedCounter = ({ target, suffix, duration = 1500 }) => {
 import headerImage from '@/assets/landingpage/header_image.png';
 import doctorsOrdersSvg from '@/assets/landingpage/undraw_doctors-orders.svg';
 import medicalCareSvg from '@/assets/landingpage/undraw_medical-care.svg';
+import aishaImg from '@/assets/landingpage/testimonials/aisha.png';
+import sarahImg from '@/assets/landingpage/testimonials/sarah.png';
+import michaelImg from '@/assets/landingpage/testimonials/michael.png';
+import davidImg from '@/assets/landingpage/testimonials/david.png';
+import kenjiImg from '@/assets/landingpage/testimonials/kenji.png';
+import rajeshImg from '@/assets/landingpage/testimonials/rajesh.png';
+import jamesImg from '@/assets/landingpage/testimonials/james.png';
+import emilyImg from '@/assets/landingpage/testimonials/emily.png';
+import elenaImg from '@/assets/landingpage/testimonials/elena.png';
+import marcusImg from '@/assets/landingpage/testimonials/marcus.png';
+import kevinImg from '@/assets/landingpage/testimonials/kevin.png';
+import amaraImg from '@/assets/landingpage/testimonials/amara.png';
+import chloeImg from '@/assets/landingpage/testimonials/chloe.png';
 import Navbar from '@/shared/components/Navbar';
 import AIChatbot from '@/shared/components/AIChatbot';
 
@@ -111,7 +124,7 @@ const faqData = [
     answer: (
       <>
         <p>Most patients can complete registration and book their first slot in <strong>1-2 minutes</strong> and see active confirmation immediately.</p>
-        <p>For more complex clinical services — such as specialized surgeries, diagnostics, or multi-department referrals — scheduling can extend to <strong>1-2 business days</strong> for department coordination. We typically send pre-visit instructions early so you see doctor advice and prepare in advance.</p>
+        <p>For more complex clinical services, such as specialized surgeries, diagnostics, or multi-department referrals, scheduling can extend to <strong>1-2 business days</strong> for department coordination. We typically send pre-visit instructions early so you see doctor advice and prepare in advance.</p>
       </>
     )
   },
@@ -177,7 +190,7 @@ const reviewsData = [
     role: "Cardiac Patient",
     rating: 5,
     text: "The cardiologists here saved my life. Their swift response and advanced screening were top-notch.",
-    img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=180&q=80"
+    img: aishaImg
   },
   {
     id: "sarah",
@@ -185,7 +198,7 @@ const reviewsData = [
     role: "Mother of two",
     rating: 5,
     text: "The pediatric team at Rising Hospital was exceptional. They made my daughter feel so comfortable during her treatment.",
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&h=150&q=80"
+    img: sarahImg
   },
   {
     id: "michael",
@@ -193,7 +206,7 @@ const reviewsData = [
     role: "Local Resident",
     rating: 5,
     text: "State-of-the-art facilities and an incredibly caring staff. I wouldn't trust my family's healthcare with anyone else.",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=180&q=80"
+    img: michaelImg
   },
   {
     id: "david",
@@ -201,7 +214,7 @@ const reviewsData = [
     role: "Father",
     rating: 5,
     text: "As a father, finding reliable emergency pediatric care was crucial. Rising Hospital exceeded all expectations.",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=180&q=80"
+    img: davidImg
   },
   {
     id: "kenji",
@@ -209,7 +222,7 @@ const reviewsData = [
     role: "Software Engineer",
     rating: 5,
     text: "Superb digital portal. The appointment booking is autonomous, fast, and transparent.",
-    img: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=150&h=180&q=80"
+    img: kenjiImg
   },
   {
     id: "rajesh",
@@ -217,7 +230,7 @@ const reviewsData = [
     role: "Senior Citizen",
     rating: 5,
     text: "The online portal makes rescheduling and checking lab reports so easy for elderly patients like me.",
-    img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&h=180&q=80"
+    img: rajeshImg
   },
   {
     id: "james",
@@ -225,7 +238,7 @@ const reviewsData = [
     role: "Corporate Client",
     rating: 5,
     text: "Excellent corporate health packages. Quick diagnostics and very minimal waiting times.",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=150&h=180&q=80"
+    img: jamesImg
   },
   {
     id: "emily",
@@ -233,7 +246,7 @@ const reviewsData = [
     role: "Teacher",
     rating: 5,
     text: "I had my diagnostic tests done here. The report was delivered to my portal in just two hours!",
-    img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=150&h=180&q=80"
+    img: emilyImg
   },
   {
     id: "elena",
@@ -241,7 +254,7 @@ const reviewsData = [
     role: "Maternity Patient",
     rating: 5,
     text: "The maternity wing is incredible. The nurses were so patient, kind, and supportive throughout my stay.",
-    img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&h=180&q=80"
+    img: elenaImg
   },
   {
     id: "marcus",
@@ -249,7 +262,7 @@ const reviewsData = [
     role: "Fitness Coach",
     rating: 5,
     text: "Their sports medicine and orthopedic consultation helped me recover from a major knee injury in record time.",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=180&q=80"
+    img: marcusImg
   },
   {
     id: "kevin",
@@ -257,7 +270,7 @@ const reviewsData = [
     role: "Outpatient",
     rating: 5,
     text: "Very clean facilities and extremely professional staff. The billing process was completely direct and hassle-free.",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&h=180&q=80"
+    img: kevinImg
   },
   {
     id: "amara",
@@ -265,7 +278,7 @@ const reviewsData = [
     role: "Medical Researcher",
     rating: 5,
     text: "A clinical infrastructure that rivals the best in the world. Exceptional sanitation and technology.",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=180&q=80"
+    img: amaraImg
   },
   {
     id: "chloe",
@@ -273,7 +286,7 @@ const reviewsData = [
     role: "Patient",
     rating: 5,
     text: "Booking an appointment through the new portal was completely seamless. We got to see a specialist the very next day.",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=180&q=80"
+    img: chloeImg
   }
 ];
 
@@ -665,7 +678,7 @@ export default function LandingPage() {
                 <span className="bento-card-label">Flexible Control</span>
                 <h3 className="bento-card-title">Cancel or Pause</h3>
                 <p className="bento-card-desc">
-                  Manage your health timeline dynamically—reschedule or pause active treatment plans anytime.
+                  Manage your health timeline dynamically. Reschedule or pause active treatment plans anytime.
                 </p>
               </div>
               <div className="bento-graphic-container">

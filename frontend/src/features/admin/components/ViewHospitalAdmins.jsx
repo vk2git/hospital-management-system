@@ -155,7 +155,7 @@ Diagnostic session status: Authenticated`;
             Registry details, security status, and tenant assignments for system operators.
           </p>
         </div>
-        <div className="flex items-center gap-3 w-full md:w-auto">
+        <div className="flex items-center gap-3 w-full md:w-auto md:mr-32">
           <button 
             onClick={fetchAdmins}
             disabled={loading}
